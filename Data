@@ -1,0 +1,34 @@
+import torch
+import torchvision.transforms as transforms
+from torch.utils.data import DataLoader, Subset
+from torchvision.datasets import ImageFolder
+
+def prepare_data(batch_size=32, num_works=2, train_sample_size=None, test_sample_size=None):
+    train_transform = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Resize((224, 224)),
+        transforms.Normalize((0.50222724, 0.50163647, 0.49506611), (0.29474634, 0.29574405, 0.29541864)),
+    ])
+
+    test_transform = transforms.Compose([
+        transforms.ToTensor(),
+        transforms.Resize(224, 224),
+        transforms.Normalize((0.50222724, 0.50163647, 0.49506611), (0.29474634, 0.29574405, 0.29541864)),
+    ])
+
+    trainset = ImageFolder(root='My_data/train', transform=train_transform)
+    if train_sample_size is not None:
+        indices = torch.randperm(len(trainset))[:train_sample_size]
+        trainset = Subset(trainset, indices)
+    
+    trainloader = DataLoader(trainset, batch_size=batch_size, shuffle=True, num_workers=num_works)
+
+    testset = ImageFolder(root='My_data/test', transform=test_transform)
+    if test_sample_size is not None:
+        indices = torch.randperm(len(testset))[:test_sample_size]
+        testset = Subset(testset, indices)
+    
+    testloader = DataLoader(testset, batch_size=batch_size, shuffle=False, num_workers=num_works)
+    
+    classes = trainset.dataset.classes
+    return trainloader, testloader, classes
