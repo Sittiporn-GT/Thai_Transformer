@@ -3,7 +3,7 @@ import torch
 from torch import nn, optim
 from utilities import save_experiment, save_checkpoint
 from data import prepare_data
-from Thai_Tranformer import ThaiTForClassfication
+from thait import ThaiTForClassfication
 
 # ----------------------------------------------------------------------------------------------------------------- #
 # Model configuration (hyperparameters)
