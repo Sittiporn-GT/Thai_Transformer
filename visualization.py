@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import torch
 from torch.nn import functional as F
-from Thai_transformer import ThaiTForClassfication
+from thait import ThaiTForClassfication
 
 # ----------------------------------------------------------------------------------------------------------------- #
 # Utility functions
