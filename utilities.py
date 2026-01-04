@@ -6,7 +6,7 @@ from torch.nn import functional as F
 import torchvision
 import torchvision.transforms as transforms
 from torchvision.datasets import ImageFolder
-from Thai_Transformer import ThaiTForClassfication
+from thait import ThaiTForClassfication
 
 # ----------------------------------------------------------------------------------------------------------------------------------------- #
 # Experiment saving / loading utilities
