@@ -8,7 +8,7 @@ The code enables training, evaluation, and attention visualization for plutonic 
 # Usage
 Installation
 
-1. Requirements
+##1. Requirements
    
 ### Software
 - Python 3.7+
@@ -23,7 +23,7 @@ The code has been tested with the following configuration:
 - Python 3.8.11
 - GPU: NVIDIA RTX series
 
-2. Install all dependencies. Install pythorch, cuda and cudnn, then install other dependencies via:
+##2. Install all dependencies. Install pythorch, cuda and cudnn, then install other dependencies via:
 
 pip install -r requirements.txt
 
