@@ -25,6 +25,7 @@ The code has been tested with the following configuration:
 
 ##2. Install all dependencies. Install pythorch, cuda and cudnn, then install other dependencies via:
 
+```bash
 pip install -r requirements.txt
 
 Note: PyTorch and CUDA should be installed following the official PyTorch instructions: 
