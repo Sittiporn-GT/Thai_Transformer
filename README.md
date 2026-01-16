@@ -27,6 +27,7 @@ The code has been tested with the following configuration:
 
 ```bash
 pip install -r requirements.txt
+```
 
 Note: PyTorch and CUDA should be installed following the official PyTorch instructions: 
 https://pytorch.org/get-started/locally/
@@ -34,6 +35,7 @@ https://pytorch.org/get-started/locally/
 # Dataset structure
 Organize the dataset folder in the following structure:
 
+```bash
 data/
 ├── train/
 │   ├── Granite/
@@ -53,5 +55,7 @@ data/
     ├── Granite/
     ├── Diorite/
     └── ...
+```
+
 
 Images should be organized following the standard ImageFolder format used by torchvision.
