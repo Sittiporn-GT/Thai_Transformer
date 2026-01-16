@@ -4,9 +4,9 @@ Thai Transformer (ThaiT) is a family of ViT models designed to automatically cla
 <img width="697" height="762" alt="overall architectures" src="https://github.com/user-attachments/assets/df158847-d911-40ae-93a2-3833557eb26e" />
 
 # Usage
-##Installation
+Installation
 
-###Requirements
+1. Requirements
 - Python 3.7+
 - PyTorch 1.7.0 or higher
 - CUDA 10.2 or higher
