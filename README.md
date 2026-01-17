@@ -106,3 +106,10 @@ This script overlays attention heatmaps on thin-section, highlighting petrograph
 # Result
 
 We offer pre-trained weights for different parameter models on the same plutonic rock datasets.
+
+### Available Model Weights
+
+| Model | Patch Size | Training | Weight |
+|------|-----------|----------|--------|
+| ThaiT-Base | 16×16 | Scratch | [ThaiT-Base](https://github.com/USERNAME/Thai-Transformer/releases/download/v1.0.0/thait_base.pt) |
+| ThaiT-Large | 16×16 | Scratch | [ThaiT-Large](https://github.com/USERNAME/Thai-Transformer/releases/download/v1.0.0/thait_large.pt) |
