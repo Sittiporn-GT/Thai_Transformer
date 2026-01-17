@@ -7,7 +7,7 @@ The code enables training, evaluation, and attention visualization for plutonic 
 
 # Usage
 
-## Installation
+### Installation
 
 1. Requirements
 
@@ -31,7 +31,7 @@ pip install -r requirements.txt
 Note: PyTorch and CUDA should be installed following the official PyTorch instructions: 
 https://pytorch.org/get-started/locally/
 
-# Dataset structure
+### Dataset structure
 Organize the dataset folder in the following structure:
 
 ```bash
@@ -58,7 +58,7 @@ data/
 
 Images should be organized following the standard ImageFolder format used by torchvision.
 
-## Training 
+### Training 
 
 To train the Thai Transformer model from scratch:
 
@@ -72,7 +72,7 @@ python train.py \
 
 The script reports classification accuracy and loss on the test set.
 
-## Evaluation 
+### Evaluation 
 
 To evaluate a trained model on the dataset:
 
@@ -82,7 +82,7 @@ python evaluate.py \
   --checkpoint model_best.pt
 ```
 
-## Attention Visualization
+### Attention Visualization
 
 To visualize self-attention maps and Grad-CAM-based interpretations:
 
