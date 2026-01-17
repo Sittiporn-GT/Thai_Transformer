@@ -6,16 +6,15 @@ Thai Transformer (ThaiT) is a family of ViT models designed to automatically cla
 The code enables training, evaluation, and attention visualization for plutonic rock classification using plane-polarised light (PPL) and cross-polarized light (XPL) thin-section images.
 
 # Usage
-Installation
 
-##1. Requirements
-   
-### Software
+## Installation
+
+## 1. Requirements
+
 - Python 3.7+
 - PyTorch 1.7.0 or higher
 - CUDA 10.2 or higher (for GPU training)
 
-### Tested Environment
 The code has been tested with the following configuration:
 - OS: Ubuntu 18.04.6 LTS
 - CUDA: 10.2
@@ -23,7 +22,7 @@ The code has been tested with the following configuration:
 - Python 3.8.11
 - GPU: NVIDIA RTX series
 
-##2. Install all dependencies. Install pythorch, cuda and cudnn, then install other dependencies via:
+### 2. Install all dependencies. Install pythorch, cuda and cudnn, then install other dependencies via:
 
 ```bash
 pip install -r requirements.txt
@@ -57,5 +56,41 @@ data/
     └── ...
 ```
 
-
 Images should be organized following the standard ImageFolder format used by torchvision.
+
+## Training 
+
+To train the Thai Transformer model from scratch:
+
+```bash
+python train.py \
+  --exp-name thait_base \
+  --batch-size 256 \
+  --epochs 100 \
+  --lr 0.01
+```
+
+The script reports classification accuracy and loss on the test set.
+
+## Evaluation 
+
+To evaluate a trained model on the dataset:
+
+```bash
+python evaluate.py \
+  --exp-name thait_base \
+  --checkpoint model_best.pt
+```
+
+## Attention Visualization
+
+To visualize self-attention maps and Grad-CAM-based interpretations:
+
+```bash
+python visualize_attention.py \
+  --exp-name thait_base \
+  --data-dir data/test \
+  --output attention_results.png
+```
+
+This script overlays attention heatmaps on thin-section, highlighting petrographic features such as twinning and extinction patterns.
