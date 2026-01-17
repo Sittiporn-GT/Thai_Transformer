@@ -111,5 +111,5 @@ We offer pre-trained weights for different parameter models on the same plutonic
 
 | Model | Patch Size | Training | Weight |
 |------|-----------|----------|--------|
-| ThaiT-Base | 16×16 | Scratch | [ThaiT-Base](https://github.com/USERNAME/Thai-Transformer/releases/download/v1.0.0/thait_base.pt) |
+| ThaiT-Base | 16×16 | Scratch | [ThaiT-Base](sha256:7ee8fcfb55789c66292f4c5bcf4af0b8b98336b52926923571dad1958e2d7ef5) |
 | ThaiT-Large | 16×16 | Scratch | [ThaiT-Large](https://github.com/USERNAME/Thai-Transformer/releases/download/v1.0.0/thait_large.pt) |
