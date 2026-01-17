@@ -107,10 +107,28 @@ This script overlays attention heatmaps on thin-section, highlighting petrograph
 
 We offer pre-trained weights for different parameter models on the same plutonic rock datasets.
 
-### Available Model Weights
+### Thai Transformer (ThaiT)
 
 | Model | Patch Size | Training | Weight |
 |------|-----------|----------|--------|
 | ThaiT-Base | 16×16 | Scratch | [ThaiT-Base](https://github.com/Sittiporn-GT/Thai_Transformer/releases/download/v1.0.0/thait-base.pt) |
 | ThaiT-Large | 16×16 | Scratch | [ThaiT-Large](https://github.com/Sittiporn-GT/Thai_Transformer/releases/download/v1.0.0/thait-large.pt) |
-| ThaiT-Huge | 16×16 | Scratch | [ThaiT-Huge] () |
+| ThaiT-Huge | 16×16 | Scratch | [ThaiT-Huge] |
+
+
+### Vision Transformer (ViT)
+
+| Model | Patch Size | Training | Weight |
+|------|-----------|----------|--------|
+| ViT-Base | 16×16 | Scratch | [ViT-Base](https://github.com/Sittiporn-GT/Thai_Transformer/releases/download/v1.0.0/thait-base.pt) |
+| ViT-Large | 16×16 | Scratch | [ViT-Large](https://github.com/Sittiporn-GT/Thai_Transformer/releases/download/v1.0.0/thait-large.pt) |
+| ViT-Huge | 16×16 | Scratch | [ViT-Huge] |
+
+
+### EfficientNetV2 
+
+| Model | Patch Size | Training | Weight |
+|------|-----------|----------|--------|
+| ViT-Base | 16×16 | Scratch | [ViT-Base](https://github.com/Sittiporn-GT/Thai_Transformer/releases/download/v1.0.0/thait-base.pt) |
+| ViT-Large | 16×16 | Scratch | [ViT-Large](https://github.com/Sittiporn-GT/Thai_Transformer/releases/download/v1.0.0/thait-large.pt) |
+| ViT-Huge | 16×16 | Scratch | [ViT-Huge] |
