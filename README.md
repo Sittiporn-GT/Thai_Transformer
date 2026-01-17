@@ -49,11 +49,7 @@ data/
 │   ├── Granite/
 │   └── ...
 ├── test/
-│   ├── Granite/
-│   └── ...
-└── demo_test/
     ├── Granite/
-    ├── Diorite/
     └── ...
 ```
 
