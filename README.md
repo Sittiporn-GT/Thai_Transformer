@@ -31,6 +31,7 @@ pip install -r requirements.txt
 Note: PyTorch and CUDA should be installed following the official PyTorch instructions: 
 https://pytorch.org/get-started/locally/
 
+
 ### Dataset structure
 Organize the dataset folder in the following structure:
 
@@ -94,3 +95,14 @@ python visualize_attention.py \
 ```
 
 This script overlays attention heatmaps on thin-section, highlighting petrographic features such as twinning and extinction patterns.
+
+
+### Reproducibility
+
+- All experiments reported in the manuscript were conducted using the configuration files provided in the repository.
+- Random seeds can be fixed in the training script to ensure deterministic behavior.
+- The demo dataset allows verification of code execution and output consistency.
+
+# Result
+
+We offer pre-trained weights for different parameter models on the same plutonic rock datasets.
