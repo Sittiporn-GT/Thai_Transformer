@@ -66,7 +66,7 @@ Images should be organized following the standard ImageFolder format used by tor
 To train the Thai Transformer model from scratch:
 
 ```bash
-python train.py \ -exp-name thait_base \ -batch-size 256 \ -epochs 100 \ -lr 0.01
+python train.py \ -exp-name thait_base \ -batch-size 64 \ -epochs 100 \ -lr 0.005
 ```
 
 The script reports classification accuracy and loss on the test set.
