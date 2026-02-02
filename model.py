@@ -221,7 +221,7 @@ class Encoder(nn.Module):
             return (x, all_attentions)
 
 
-class ThaiTForClassfication(nn.Module):
+class ThaiTForClassification(nn.Module):
     """
     The ThaiT model for classification.
     """
