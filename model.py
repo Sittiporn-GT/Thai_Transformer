@@ -178,7 +178,7 @@ class MLP(nn.Module):
 class Block(nn.Module):
     def __init__(self, config):
         super().__init__()
-        self.use_faster_attention = config.get("use_optimizing_attention", False)
+        self.use_faster_attention = config.get("use_optimizing_attention", True)
         if self.use_faster_attention:
             self.attention = Optimizing_MultiHeadAttention(config)
         else:
