@@ -52,7 +52,7 @@ Organize the dataset folder in the following structure:
     └── <Gabbro>
     └── <Diorite>
     └── ...
-├── test/
+├── <test>
     ├── <Granite>
     └── <Gabbro>
     └── <Diorite>
@@ -75,7 +75,8 @@ The script reports classification accuracy and loss on the test set.
 
 To evaluate a trained model on the dataset:
 
-```bash python evaluate.py \ -exp-name thait_base \ -checkpoint model_best.pt
+```bash
+python evaluate.py \ -exp-name thait_base \ -checkpoint model_best.pt
 ```
 
 ### Attention Visualization
