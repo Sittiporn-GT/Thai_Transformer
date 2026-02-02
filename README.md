@@ -36,20 +36,26 @@ https://pytorch.org/get-started/locally/
 Organize the dataset folder in the following structure:
 
 ```bash
-data/
-├── train/
-│   ├── Granite/
+<dataset>
+├── <train>
+    ├── <Granite>
           ├──01_granite_XPL
           ├──01_granite_PPL
           ├──02_granite_XPL
+          ├──02_granite_PPL
           ...
-│   ├── Gabbro/
-│   └── ...
-├── val/
-│   ├── Granite/
-│   └── ...
+    ├── <Gabbro>
+    └── <Diorite>
+    └── ...
+├── <val>
+    ├── <Granite>
+    └── <Gabbro>
+    └── <Diorite>
+    └── ...
 ├── test/
-    ├── Granite/
+    ├── <Granite>
+    └── <Gabbro>
+    └── <Diorite>
     └── ...
 ```
 
@@ -60,11 +66,7 @@ Images should be organized following the standard ImageFolder format used by tor
 To train the Thai Transformer model from scratch:
 
 ```bash
-python train.py \
-  --exp-name thait_base \
-  --batch-size 256 \
-  --epochs 100 \
-  --lr 0.01
+python train.py \ -exp-name thait_base \ -batch-size 256 \ -epochs 100 \ -lr 0.01
 ```
 
 The script reports classification accuracy and loss on the test set.
@@ -73,10 +75,7 @@ The script reports classification accuracy and loss on the test set.
 
 To evaluate a trained model on the dataset:
 
-```bash
-python evaluate.py \
-  --exp-name thait_base \
-  --checkpoint model_best.pt
+```bash python evaluate.py \ -exp-name thait_base \ -checkpoint model_best.pt
 ```
 
 ### Attention Visualization
@@ -84,10 +83,7 @@ python evaluate.py \
 To visualize self-attention maps and Grad-CAM-based interpretations:
 
 ```bash
-python visualize_attention.py \
-  --exp-name thait_base \
-  --data-dir data/test \
-  --output attention_results.png
+python visualize_attention.py \ -exp-name thait_base \ -data-dir data/test \ -output attention_results.png
 ```
 
 This script overlays attention heatmaps on thin-section, highlighting petrographic features such as twinning and extinction patterns.
