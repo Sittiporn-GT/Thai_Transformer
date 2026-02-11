@@ -12,7 +12,6 @@ def prepare_data(
     shuffle_train=True,
     seed=None,
 ):
-    # Resize should happen before ToTensor
     transform = transforms.Compose([
         transforms.Resize((512, 512)),
         transforms.ToTensor(),
@@ -22,7 +21,6 @@ def prepare_data(
         )
     ])
 
-    # Load datasets
     train_set = ImageFolder(root="/plutonic_rocks/train", transform=transform)
     val_set   = ImageFolder(root="/plutonic_rocks/val",   transform=transform)
     test_set  = ImageFolder(root="/plutonic_rocks/test",  transform=transform)
@@ -42,13 +40,9 @@ def prepare_data(
     train_set = make_subset(train_set, train_sample_size)
     val_set   = make_subset(val_set,   val_sample_size)
     test_set  = make_subset(test_set,  test_sample_size)
-
-    # DataLoaders
     trainloader = DataLoader(train_set, batch_size=batch_size, shuffle=shuffle_train, num_workers=num_workers)
-    valloader   = DataLoader(val_set,   batch_size=batch_size, shuffle=False,        num_workers=num_workers)
-    testloader  = DataLoader(test_set,  batch_size=batch_size, shuffle=False,        num_workers=num_workers)
-
-    # Safe class names extraction
+    valloader   = DataLoader(val_set,   batch_size=batch_size, shuffle=False, num_workers=num_workers)
+    testloader  = DataLoader(test_set,  batch_size=batch_size, shuffle=False, num_workers=num_workers)
     classes = train_set.dataset.classes if isinstance(train_set, Subset) else train_set.classes
 
     return trainloader, valloader, testloader, classes
