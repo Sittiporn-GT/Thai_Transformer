@@ -58,7 +58,6 @@ Organize the dataset folder in the following structure:
     └── <Diorite>
     └── ...
 ```
-## Dataset
 
 Due to size limitations, the plutonic rock dataset (testset) is not hosted on GitHub.
 You can download it from Zenodo:
