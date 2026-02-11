@@ -90,7 +90,7 @@ def visualize_attention_custom(model, test_dir, output=None, device="cuda"):
     plt.show()
 
 # # Experiment and training hyperparameters
-exp_name = 'experiments_Thai_B/16'
+exp_name = 'ThaiT_B/16'
 #---------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 # Plot Training Results
 # After training, load the experiment metrics and plot the losses and accuracies.
