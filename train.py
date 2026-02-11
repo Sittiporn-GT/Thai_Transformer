@@ -139,6 +139,4 @@ def main(exp_name, batch_size, epochs, lr, save_model_every, device):
     trainer.train(trainloader, valloader, testloader, epochs, save_model_every_n_epochs=save_model_every)
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
-main(exp_name, batch_size, epochs, lr, save_model_every, device)
-
 # ----------------------------------------------------------------------------------------------------------------- #
