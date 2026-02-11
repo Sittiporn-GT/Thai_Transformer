@@ -58,8 +58,6 @@ Organize the dataset folder in the following structure:
     └── <Diorite>
     └── ...
 ```
-
-Images should be organized following the standard ImageFolder format used by torchvision
 (Demo) test set: https://doi.org/10.5281/zenodo.18613714
 
 ### Training 
