@@ -59,7 +59,8 @@ Organize the dataset folder in the following structure:
     └── ...
 ```
 
-Images should be organized following the standard ImageFolder format used by torchvision.
+Images should be organized following the standard ImageFolder format used by torchvision
+(Demo) test set: https://zenodo.org/records/18613714?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6ImQ1YTM3N2E5LTIxNmItNDhhNy1hNzY4LTYyZmMxNDQ0OGVlZSIsImRhdGEiOnt9LCJyYW5kb20iOiI4MjE1NjJmYTUwOTcwYmQxOWYzMTI5MmFhMmQ1NDhlYiJ9.HfpDcZupKm2BhcQi0pC8e-2PeL4GkUQ52JEZl7Sfo5GSSIh1hQiqL4QwgS9WRadb_WTXrbRAusnOJAQ59MMuPA 
 
 ### Training 
 
