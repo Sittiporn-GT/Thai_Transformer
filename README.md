@@ -60,10 +60,10 @@ Organize the dataset folder in the following structure:
 ```
 ## Dataset
 
-Due to size limitations, the full dataset is not hosted on GitHub.
+Due to size limitations, the plutonic rock dataset (testset) is not hosted on GitHub.
 You can download it from Zenodo:
 
-(Demo) plutonic_rock_test_set: https://doi.org/10.5281/zenodo.18613714
+(Demo) https://doi.org/10.5281/zenodo.18613714
 
 ### Training 
 
