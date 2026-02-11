@@ -85,13 +85,6 @@ else:
     class_names = train_ds.classes
 
 # -------------------- Evaluation Function -------------------- #
-def forward_logits(model, images):
-    """Support models that return logits or (logits, aux)."""
-    out = model(images)
-    if isinstance(out, (tuple, list)):
-        return out[0]
-    return out
-
 def evaluate_and_plot(dataloader, split_name="Train"):
     all_preds, all_labels = [], []
     with torch.no_grad():
@@ -118,3 +111,4 @@ def evaluate_and_plot(dataloader, split_name="Train"):
 # -------------------- Run ------------------- #
 evaluate_and_plot(trainloader, split_name="Train")
 evaluate_and_plot(testloader,  split_name="Test")
+
