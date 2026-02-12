@@ -2,7 +2,7 @@ import math
 import torch
 from torch import nn
 from torch import Tensor
-import torch.nn.functional as F # Added import for F.softmax
+import torch.nn.functional as F
 
 class NewGELUActivation(nn.Module):
 
@@ -26,6 +26,7 @@ class PatchEmbeddings(nn.Module):
     def forward(self, x):
         x = self.projection(x)
         x = x.flatten(2).transpose(1, 2)
+        
         return x
 
 class Embeddings(nn.Module):
@@ -49,6 +50,7 @@ class Embeddings(nn.Module):
         x = torch.cat((cls_tokens, x), dim=1)
         x = x + self.position_embeddings
         x = self.dropout(x)
+        
         return x
 
 
@@ -77,6 +79,7 @@ class AttentionHead(nn.Module):
         attention_probs = nn.functional.softmax(attention_scores, dim=-1)
         attention_probs = self.dropout(attention_probs)
         attention_output = torch.matmul(attention_probs, value)
+        
         return (attention_output, attention_probs)
 
 class MultiHeadAttention(nn.Module):
@@ -113,6 +116,7 @@ class MultiHeadAttention(nn.Module):
             return (attention_output, None)
         else:
             attention_probs = torch.stack([attention_probs for _, attention_probs in attention_outputs], dim=1)
+            
             return (attention_output, attention_probs)
 
 
@@ -173,13 +177,14 @@ class MLP(nn.Module):
         x = self.activation(x)
         x = self.dense_2(x)
         x = self.dropout(x)
+        
         return x
 
 class Block(nn.Module):
     def __init__(self, config):
         super().__init__()
-        self.use_faster_attention = config.get("use_optimizing_attention", True)
-        if self.use_faster_attention:
+        self.use_optimizing_attention = config.get("use_optimizing_attention", True)
+        if self.use_optimizing_attention:
             self.attention = Optimizing_MultiHeadAttention(config)
         else:
             self.attention = MultiHeadAttention(config)
