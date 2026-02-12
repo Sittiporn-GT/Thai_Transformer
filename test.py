@@ -108,6 +108,7 @@ def evaluate_and_plot(dataloader, split_name="Train"):
     plt.ylabel("True")
     plt.tight_layout()
     plt.show()
-# -------------------- Run ------------------- #
+# -------------------- Run -------------------- #
 evaluate_and_plot(trainloader, split_name="Train")
 evaluate_and_plot(testloader,  split_name="Test")
+
