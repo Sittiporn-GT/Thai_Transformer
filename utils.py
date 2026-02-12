@@ -89,27 +89,3 @@ def load_experiment(
         model.eval()
 
     return (config, model, train_losses, test_losses, test_accuracies, train_accuracies, val_losses, val_accuracies, throughput_img_per_sec, max_gpu_mem_GB)
-
-def evaluate_and_plot(dataloader, split_name="Train"):
-    all_preds, all_labels = [], []
-    with torch.no_grad():
-        for images, labels in dataloader:
-            images = images.to(device, non_blocking=True)
-            logits, _ = model(images)
-            preds = logits.argmax(dim=1).cpu().numpy()
-            all_preds.extend(preds)
-            all_labels.extend(labels.numpy())
-
-    print(f"\n=== {split_name} Classification Report ===")
-    print(classification_report(all_labels, all_preds, target_names=class_names, digits=4))
-
-    cm = confusion_matrix(all_labels, all_preds)
-    plt.figure(figsize=(1.0 + 0.5*len(class_names), 1.0 + 0.5*len(class_names)))
-    sns.heatmap(cm, annot=True, fmt="d",
-                xticklabels=class_names, yticklabels=class_names,
-                cmap="Blues")
-    plt.title(f"{split_name} Confusion Matrix")
-    plt.xlabel("Predicted")
-    plt.ylabel("True")
-    plt.tight_layout()
-    plt.show()
