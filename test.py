@@ -16,7 +16,7 @@ def set_seed(seed: int = 42):
     torch.cuda.manual_seed_all(seed)
     torch.backends.cudnn.deterministic = True
     torch.backends.cudnn.benchmark = False
-
+    
 set_seed(42)
 
 # -------------------- Config & Patchs -------------------- #
@@ -31,8 +31,7 @@ with open(config_path, "r") as f:
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-# -------------------- model -------------------- #
-# Load Model
+# -------------------- Load model -------------------- #
 model = ThaiTForClassification(config).to(device)
 
 ckpt = torch.load(checkpoint_path, map_location="cpu")
@@ -42,7 +41,7 @@ if isinstance(ckpt, dict):
         state = ckpt["model_state_dict"]
     elif "state_dict" in ckpt:
         state = ckpt["state_dict"]
-
+        
 missing, unexpected = model.load_state_dict(state, strict=False)
 print("Loaded checkpoint.")
 print(f"Missing keys: {len(missing)}")
@@ -68,8 +67,8 @@ else:
     import torchvision
     import torchvision.transforms as transforms
     from torch.utils.data import DataLoader
-    train_dir = "/dataset/plutonic_rock/train"
-    test_dir  = "/dataset/plutonic_rock/test"
+    train_dir = "/dataset/train"
+    test_dir  = "/dataset/test"
     transform = transforms.Compose([
         transforms.Resize((config.get("image_size", 512), config.get("image_size", 512))),
         transforms.ToTensor(),
@@ -80,6 +79,7 @@ else:
     ])
     train_ds = torchvision.datasets.ImageFolder(root=train_dir, transform=transform)
     test_ds  = torchvision.datasets.ImageFolder(root=test_dir,  transform=transform)
+    
     trainloader = DataLoader(train_ds, batch_size=64, shuffle=False, num_workers=4, pin_memory=True)
     testloader  = DataLoader(test_ds,  batch_size=64, shuffle=False, num_workers=4, pin_memory=True)
     class_names = train_ds.classes
@@ -111,4 +111,3 @@ def evaluate_and_plot(dataloader, split_name="Train"):
 # -------------------- Run ------------------- #
 evaluate_and_plot(trainloader, split_name="Train")
 evaluate_and_plot(testloader,  split_name="Test")
-
